@@ -15,7 +15,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 第三方应用
+    'captcha',
+
+    # 自定义应用
+    'accounts',
 ]
+
+AUTH_USER_MODEL = 'accounts.CustomUser'  # 如果定义了自定义用户模型
+
+# 配置验证码
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'  # 使用简单的数学验证码
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

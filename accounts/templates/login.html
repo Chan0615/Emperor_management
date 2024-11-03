@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登录</title>
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("data:image/jpeg;base64,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");
+            background-size: cover;
+        }
+
+        /* 登录容器样式 */
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* 标题样式 */
+        .login-container h2 {
+            margin: 0 0 20px;
+            color: #333;
+        }
+
+        /* 表单样式 */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        form p {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            color: #555;
+        }
+
+        label {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* 按钮样式 */
+        button[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* 消息样式 */
+        .messages {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            list-style-type: none;
+        }
+
+        .messages li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="login-container">
+    <h2>用户登录</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">登录</button>
+    </form>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+</body>
+</html>
